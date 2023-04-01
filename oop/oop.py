@@ -11,8 +11,13 @@ class Animal:
     def __str__(self):
         return f'Weight: {self.weight}, Color: {self.color}, Pol: {self.pol}'
 
+    def __int__(self):
+        return int(self.weight)
+
     def feed(self, eat):
         pass
+
+
 
 
 class Bear(Animal):
@@ -38,17 +43,11 @@ class Penguin(Animal):
         if eat != 'fish':
             return False
         return True
-    
 
 
-def wash(animal: Animal, soap):
-    print('We washing this animal')
-
-
-
+# Weight: 80, Color: brown, Pol: male
 garphield = Bear(80, 'brown', 'male')
 
-res = str(garphield)
 
-print(res)
+print(int(garphield))
 
