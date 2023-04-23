@@ -1,8 +1,10 @@
 def uppercase_decorator(function):
     def wrapper():
         result = function() # say_hi()
-        make_uppercase = result.upper()
-        return make_uppercase
+        upper_list = []
+        for item in result:
+            upper_list.append(item.upper())
+        return upper_list
 
     return wrapper
 
@@ -14,6 +16,7 @@ def make_list(f):
     return wrapper
 
 
+@uppercase_decorator
 @make_list
 def say_hi():
     return 'hello there'
